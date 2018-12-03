@@ -1,5 +1,6 @@
 {:paths ["resources" "src"]
- :deps  {org.clojure/clojure {:mvn/version "RELEASE"}}
+ :deps  {org.clojure/clojure {:mvn/version "RELEASE"}
+         criterium/criterium {:mvn/version "0.4.4"}}
  :aliases
         {:dev  {:extra-paths ["dev"]
                 :extra-deps {org.clojure/tools.namespace {:mvn/version "0.2.11"}}}

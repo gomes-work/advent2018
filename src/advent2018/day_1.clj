@@ -6,15 +6,22 @@
 (def input (->> (slurp (io/resource "day1.txt"))
                 (str/split-lines)
                 (map read-string)))
-(comment
-  ;Answer 1
-  (reduce + input)
 
-  ;Answer 2
+(defn solve-part1 [input]
+  (reduce + input))
+
+(defn solve-part2 [input]
   (->> (reductions + (cycle input))
        (reduce
          (fn [seen fq]
            (if (seen fq)
              (reduced fq)
-             (conj seen fq))) #{0})))
+             (conj seen fq))) #{})))
+
+(comment
+  ; Answer Part 1: 502
+  (solve-part1 input)
+
+  ; Answer Part 2: 71961
+  (solve-part2 input))
 
